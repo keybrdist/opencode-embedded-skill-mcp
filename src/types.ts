@@ -3,8 +3,7 @@
  */
 export interface McpServerConfig {
   command?: string | string[]
-  args?: string[]
-  env?: Record<string, string>
+  environment?: Record<string, string>
 }
 
 /**

@@ -119,8 +119,8 @@ export function createSkillMcpManager(): SkillMcpManager {
       : [String(commandValue)]
 
     const command = commandParts[0]
-    const args = [...commandParts.slice(1), ...(config.args || [])]
-    const mergedEnv = createCleanMcpEnvironment(config.env)
+    const args = commandParts.slice(1)
+    const mergedEnv = createCleanMcpEnvironment(config.environment)
 
     registerProcessCleanup()
 

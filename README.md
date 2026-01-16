@@ -50,7 +50,7 @@ description: "A skill that uses a custom MCP server"
 mcp:
   my-server:
     command: ["npx", "-y", "@some/mcp-server"]
-    env:
+    environment:
       API_KEY: "${MY_API_KEY}"
 ---
 
@@ -116,9 +116,8 @@ The MCP configuration supports the standard format:
 
 ```typescript
 interface McpServerConfig {
-  command: string | string[];  // Command to execute
-  args?: string[];             // Arguments (if command is a string)
-  env?: Record<string, string> // Environment variables
+  command: string | string[];          // Command to execute (array recommended for args)
+  environment?: Record<string, string> // Environment variables
 }
 ```
 
