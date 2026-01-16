@@ -52,29 +52,27 @@ You can define MCP servers in the skill's YAML frontmatter:
 
 ```markdown
 ---
-name: my-skill
-description: "A skill that uses a custom MCP server"
+name: browser-automation
+description: "A skill for automating browser interactions"
 mcp:
-  my-server:
-    command: ["npx", "-y", "@some/mcp-server"]
-    environment:
-      API_KEY: "${MY_API_KEY}"
+  playwright:
+    command: ["npx", "-y", "@playwright/mcp@latest"]
 ---
 
-# My Skill
+# Browser Automation
 
-This skill provides tools via the `my-server` MCP.
+This skill provides browser automation tools via the `playwright` MCP.
 ```
 
 Alternatively, place an `mcp.json` file in the skill directory:
 
-**`~/.config/opencode/skill/my-skill/mcp.json`**
+**`~/.config/opencode/skill/browser-automation/mcp.json`**
 
 ```json
 {
   "mcpServers": {
-    "my-server": {
-      "command": ["npx", "-y", "@some/mcp-server"]
+    "playwright": {
+      "command": ["npx", "-y", "@playwright/mcp@latest"]
     }
   }
 }
@@ -85,12 +83,12 @@ Alternatively, place an `mcp.json` file in the skill directory:
 In OpenCode:
 
 ```
-skill(name="my-skill")
+skill(name="browser-automation")
 ```
 
 **Pro Tip:** You don't always need to call the tool explicitly. Just ask for the skill by name in chat, and OpenCode will usually find and load it for you:
 
-> "Use the my-skill skill to do X"
+> "Use the browser-automation skill to take a screenshot of google.com"
 
 The plugin will load the skill and discover the capabilities of the embedded MCP server.
 
@@ -99,7 +97,7 @@ The plugin will load the skill and discover the capabilities of the embedded MCP
 Invoke tools, read resources, or get prompts using `skill_mcp`:
 
 ```
-skill_mcp(mcp_name="my-server", tool_name="some-tool", arguments='{"key": "value"}')
+skill_mcp(mcp_name="playwright", tool_name="screenshot", arguments='{"url": "https://google.com"}')
 ```
 
 ## Tools Provided
