@@ -1,6 +1,8 @@
-# OpenCode Embedded Skill MCP Plugin
+# OpenCode Lazy Loader Plugin
 
-A standalone OpenCode plugin that enables skills to bundle and manage their own [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers.
+If you use a few MCP's, you can lazy load them instead of having them always on globally. They will instead be summoned when they are needed.
+
+This is a standalone OpenCode plugin that enables skills to bundle and manage their own [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers.
 
 This allows skills to bring their own tools, resources, and prompts without requiring manual server configuration in `opencode.json`.
 
