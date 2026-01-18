@@ -6,10 +6,10 @@ import { createSkillMcpTool } from './tools/skill-mcp.js'
 import type { LoadedSkill } from './types.js'
 
 function hasOhMyOpencode(plugins: string[]): boolean {
-  return plugins.some(p => 
-    p === 'oh-my-opencode' || 
-    p.includes('/oh-my-opencode') ||
-    p.startsWith('@code-yeongyu/oh-my-opencode')
+  return plugins.some(p =>
+    p === 'oh-my-opencode' ||
+    p === '@code-yeongyu/oh-my-opencode' ||
+    p.endsWith('/oh-my-opencode')
   )
 }
 
