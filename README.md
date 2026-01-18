@@ -1,17 +1,19 @@
 # OpenCode Lazy Loader Plugin
 
-If you use a few MCP's, you can lazy load them instead of having them always on globally. They will instead be summoned when they are needed.
+This is the OpenCode plugin that lazy-loads skill-embedded MCP servers. It lets skills bundle their own MCP servers so they can be loaded on-demand instead of being configured globally.
 
-This is a standalone OpenCode plugin that enables skills to bundle and manage their own [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers.
+Note: This package was renamed from `opencode-embedded-skill-mcp` to `opencode-lazy-loader`. If you still have the old package, upgrade to the new name.
+
+This is a standalone OpenCode plugin that enables skills to bundle and manage their own [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers, then lazy-load them on demand.
 
 This allows skills to bring their own tools, resources, and prompts without requiring manual server configuration in `opencode.json`.
 
 ## Why use this?
 
-- **🔌 Plug-and-Play Skills**: Skills bring their own tools. No need to manually register servers in your global config.
-- **🧠 Cleaner Context**: Tools are loaded on-demand only when the skill is active, keeping your agent's context window focused and efficient.
-- **📦 Team Portability**: Commit skills to your project repo; anyone with the plugin gets the tools automatically.
-- **⚡ Efficient Resources**: Servers start only when used and shut down automatically after 5 minutes of inactivity.
+- **Plug-and-Play Skills**: Skills bring their own tools. No need to manually register servers in your global config.
+- **Cleaner Context**: Tools are loaded on-demand only when the skill is active, keeping your agent's context window focused and efficient.
+- **Team Portability**: Commit skills to your project repo; anyone with the plugin gets the tools automatically.
+- **Efficient Resources**: Servers start only when used and shut down automatically after 5 minutes of inactivity.
 
 ---
 
@@ -28,11 +30,13 @@ This allows skills to bring their own tools, resources, and prompts without requ
 
 ## Installation
 
+Deprecation notice: The package was renamed from `opencode-embedded-skill-mcp` to `opencode-lazy-loader`. If you installed the old name, update to the new package.
+
 Add the plugin to your `opencode.json`:
 
 ```json
 {
-  "plugin": ["opencode-embedded-skill-mcp"]
+  "plugin": ["opencode-lazy-loader"]
 }
 ```
 
@@ -40,7 +44,7 @@ Or install it locally:
 
 ```json
 {
-  "plugin": ["./path/to/opencode-embedded-skill-mcp"]
+  "plugin": ["./path/to/opencode-lazy-loader"]
 }
 ```
 

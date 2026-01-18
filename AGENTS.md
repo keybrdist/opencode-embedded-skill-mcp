@@ -1,4 +1,4 @@
-# Agent Guidelines for opencode-embedded-skill-mcp
+# Agent Guidelines for opencode-lazy-loader
 
 ## Project Overview
 This is a standalone OpenCode plugin that enables "Skill-Embedded MCP Support". It allows OpenCode skills (markdown files) to define their own Model Context Protocol (MCP) servers, which are automatically loaded and managed by this plugin.

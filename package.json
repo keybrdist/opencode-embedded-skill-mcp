@@ -1,7 +1,7 @@
 {
-  "name": "opencode-embedded-skill-mcp",
+  "name": "opencode-lazy-loader",
   "version": "1.0.0",
-  "description": "OpenCode plugin for skill-embedded MCP support",
+  "description": "OpenCode plugin for lazy-loading skill-embedded MCP servers",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keybrdist/opencode-embedded-skill-mcp.git"
+    "url": "git+https://github.com/keybrdist/opencode-lazy-loader.git"
   },
   "files": [
     "dist",
