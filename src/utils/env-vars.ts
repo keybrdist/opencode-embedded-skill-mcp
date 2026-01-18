@@ -1,4 +1,4 @@
-import type { McpServerConfig } from '../types.js'
+import type { McpServerConfig, NormalizedCommand } from '../types.js'
 
 /**
  * Expand environment variables in a string
@@ -74,4 +74,20 @@ export function createCleanMcpEnvironment(
   }
   
   return baseEnv
+}
+
+export function normalizeCommand(config: McpServerConfig): NormalizedCommand {
+  if (Array.isArray(config.command)) {
+    const [cmd, ...cmdArgs] = config.command.map(String)
+    return { command: cmd, args: cmdArgs }
+  }
+
+  if (typeof config.command === 'string') {
+    return {
+      command: config.command,
+      args: config.args?.map(String) ?? []
+    }
+  }
+
+  throw new Error('Invalid MCP command configuration: command must be a string or array')
 }

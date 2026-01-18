@@ -1,9 +1,19 @@
 /**
  * Configuration for an MCP server
+ *
+ * Supports two formats:
+ * 1. OpenCode format: command: ["npx", "-y", "@some/mcp-server"]
+ * 2. oh-my-opencode format: command: "npx", args: ["-y", "@some/mcp-server"]
  */
 export interface McpServerConfig {
   command?: string | string[]
+  args?: string[]
   environment?: Record<string, string>
+}
+
+export interface NormalizedCommand {
+  command: string
+  args: string[]
 }
 
 /**
