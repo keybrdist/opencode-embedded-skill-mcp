@@ -1,4 +1,4 @@
-import { tool, type ToolDefinition } from '@opencode-ai/plugin'
+import { tool, type ToolDefinition } from '@opencode-ai/plugin/tool'
 import type { LoadedSkill, McpServerConfig } from '../types.js'
 import type { SkillMcpManager } from '../skill-mcp-manager.js'
 

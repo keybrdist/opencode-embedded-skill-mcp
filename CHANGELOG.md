@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2] - 2025-01-18
+
+### Fixed
+- Use explicit `@opencode-ai/plugin/tool` subpath import instead of `@opencode-ai/plugin`
+- Fixes Node ESM module resolution error with `@opencode-ai/plugin@1.1.25`
+
 ## [1.0.1] - 2025-01-18
 
 ### Fixed
