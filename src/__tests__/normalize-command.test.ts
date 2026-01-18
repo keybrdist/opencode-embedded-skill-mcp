@@ -190,6 +190,17 @@ describe('normalizeEnv', () => {
       expect(result.env).toEqual({ VALID: 'value', ALSO_VALID: '123' })
     })
 
+    it('skips entries with empty key (equals at start)', () => {
+      const config: McpServerConfig = {
+        command: 'node',
+        env: ['=value_with_empty_key', 'VALID=value']
+      }
+
+      const result = normalizeEnv(config)
+
+      expect(result.env).toEqual({ VALID: 'value' })
+    })
+
     it('handles empty value after equals sign', () => {
       const config: McpServerConfig = {
         command: 'node',
